@@ -37,7 +37,7 @@ namespace MMABooksBusinessClasses
             if (string.IsNullOrWhiteSpace(City))
                 return "City is required.";
             if (string.IsNullOrWhiteSpace(State) || State.Length != 2)
-                return "State must be a 2-character code.";
+                return "State must be a 2 character code.";
             if (string.IsNullOrWhiteSpace(ZipCode))
                 return "ZipCode is required.";
             return null;
