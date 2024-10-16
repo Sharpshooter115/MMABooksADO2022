@@ -36,6 +36,7 @@ namespace MMABooksDBClasses
                         ZipCode = custReader["ZipCode"].ToString()
                     };
                 }
+                Console.WriteLine($"No customer found with ID: {customerID}");
                 return null;
             }
             catch (MySqlException ex)
@@ -66,8 +67,6 @@ namespace MMABooksDBClasses
             {
                 connection.Open();
                 insertCommand.ExecuteNonQuery();
-
-                
                 string selectStatement = "SELECT LAST_INSERT_ID()";
                 MySqlCommand selectCommand = new MySqlCommand(selectStatement, connection);
                 return Convert.ToInt32(selectCommand.ExecuteScalar());
@@ -151,7 +150,7 @@ namespace MMABooksDBClasses
             {
                 connection.Open();
                 int rowsAffected = updateCommand.ExecuteNonQuery();
-                return rowsAffected == 1; // Return true if one row was updated
+                return rowsAffected == 1; 
             }
             catch (MySqlException ex)
             {

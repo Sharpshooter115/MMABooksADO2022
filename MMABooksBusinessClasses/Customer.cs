@@ -4,8 +4,6 @@ namespace MMABooksBusinessClasses
 {
     public class Customer
     {
-        // there are several warnings in this file related to nullable properties and return values.
-        // you can ignore them
         public Customer() { }
 
         public Customer(int id, string name, string address, string city, string state, string zipcode)
@@ -19,15 +17,10 @@ namespace MMABooksBusinessClasses
         }
 
         public int CustomerID { get; set; }
-
         public string Name { get; set; }
-        
         public string Address { get; set; }
-
         public string City { get; set; }
-
         public string State { get; set; }
-
         public string ZipCode { get; set; }
 
         public override string ToString()
@@ -38,27 +31,16 @@ namespace MMABooksBusinessClasses
         public string Validate()
         {
             if (string.IsNullOrWhiteSpace(Name))
-                
                 return "Name is required.";
-
             if (string.IsNullOrWhiteSpace(Address))
-               
                 return "Address is required.";
-
             if (string.IsNullOrWhiteSpace(City))
-               
                 return "City is required.";
-
             if (string.IsNullOrWhiteSpace(State) || State.Length != 2)
-                
                 return "State must be a 2-character code.";
-
             if (string.IsNullOrWhiteSpace(ZipCode))
-               
                 return "ZipCode is required.";
-           
             return null;
         }
     }
 }
-
