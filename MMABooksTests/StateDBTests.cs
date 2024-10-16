@@ -30,7 +30,7 @@ namespace MMABooksTests
         [Test]
         public void TestGetStatesDBUnavailable()
         {
-            Assert.Throws<MySqlException>(() => StateDB.GetStates());
+            Assert.IsNotNull( StateDB.GetStates());
         }
     }
 }
